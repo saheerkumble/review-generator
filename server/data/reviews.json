@@ -1,0 +1,12 @@
+{
+  "sales": {
+    "test ride": "I had an amazing test ride experience. The bike handled perfectly and the staff explained every feature clearly.",
+    "delivery": "The delivery process was smooth and on time. The staff made the handover special.",
+    "staff behaviour": "The sales team was polite and professional throughout my visit."
+  },
+  "service": {
+    "pickup": "Pickup service was prompt and hassle-free. They collected the bike right from my doorstep.",
+    "technician": "The technician diagnosed the issue quickly and fixed it perfectly.",
+    "washing": "The washing quality was excellent and the bike looked brand new after service."
+  }
+}
