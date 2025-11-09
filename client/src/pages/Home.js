@@ -1,3 +1,4 @@
+/*
 import { useState } from "react";
 import CategoryButtons from "../components/CategoryButtons";
 import KeywordButtons from "../components/KeywordButtons";
@@ -48,3 +49,19 @@ function Home() {
 }
 
 export default Home;
+*/
+
+import { useNavigate } from "react-router-dom";
+
+function Home() {
+  const navigate = useNavigate();
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>Welcome to Vibrant Motocorp Review Generator</h2>
+      <button onClick={() => navigate("/category")}>Start</button>
+    </div>
+  );
+}
+
+export default Home;
+

@@ -83,6 +83,7 @@ function App() {
 
 export default App;
 */
+/*
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 
@@ -95,4 +96,51 @@ function App() {
     </BrowserRouter>
   );
 }
+export default App;
+*/
+/*
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import CategorySelect from "./pages/CategorySelect";
+import KeywordSelect from "./pages/KeywordSelect";
+import ReviewDisplay from "./pages/ReviewDisplay";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category" element={<CategorySelect />} />
+        <Route path="/keywords/:category" element={<KeywordSelect />} />
+        <Route path="/review/:category/:keyword" element={<ReviewDisplay />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+*/
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ReviewProvider } from "./context/ReviewContext";
+import Home from "./pages/Home";
+import CategorySelect from "./pages/CategorySelect";
+import KeywordSelect from "./pages/KeywordSelect";
+import ReviewDisplay from "./pages/ReviewDisplay";
+
+function App() {
+  return (
+    <ReviewProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/category" element={<CategorySelect />} />
+          <Route path="/keywords/:category" element={<KeywordSelect />} />
+          <Route path="/review/:category/:keyword" element={<ReviewDisplay />} />
+        </Routes>
+      </Router>
+    </ReviewProvider>
+  );
+}
+
 export default App;
