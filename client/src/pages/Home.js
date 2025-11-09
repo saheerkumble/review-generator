@@ -50,7 +50,7 @@ function Home() {
 
 export default Home;
 */
-
+/*
 import { useNavigate } from "react-router-dom";
 
 function Home() {
@@ -65,3 +65,20 @@ function Home() {
 
 export default Home;
 
+*/
+
+import LoginButton from "../components/LoginButton";
+
+function Home() {
+  return (
+    <div style={{ textAlign: "center", marginTop: "80px" }}>
+      <h2>Welcome to Vibrant Motocorp Review Generator</h2>
+      <p>Please sign in with Google to continue.</p>
+      <div style={{ marginTop: "30px" }}>
+        <LoginButton />
+      </div>
+    </div>
+  );
+}
+
+export default Home;
