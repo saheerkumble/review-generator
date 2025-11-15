@@ -128,6 +128,7 @@ import CategorySelect from "./pages/CategorySelect";
 import KeywordSelect from "./pages/KeywordSelect";
 import ReviewDisplay from "./pages/ReviewDisplay";
 
+
 function App() {
   return (
     <ReviewProvider>
@@ -137,6 +138,7 @@ function App() {
           <Route path="/category" element={<CategorySelect />} />
           <Route path="/keywords/:category" element={<KeywordSelect />} />
           <Route path="/review/:category/:keyword" element={<ReviewDisplay />} />
+        
         </Routes>
       </Router>
     </ReviewProvider>

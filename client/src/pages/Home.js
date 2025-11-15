@@ -68,6 +68,7 @@ export default Home;
 */
 
 import LoginButton from "../components/LoginButton";
+import TestAI from "../components/TestAI";
 
 function Home() {
   return (
@@ -77,6 +78,10 @@ function Home() {
       <div style={{ marginTop: "30px" }}>
         <LoginButton />
       </div>
+      <div style={{ marginTop: "30px" }}>
+        <TestAI />
+      </div>
+      
     </div>
   );
 }
