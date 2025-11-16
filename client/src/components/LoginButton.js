@@ -15,7 +15,7 @@ function LoginButton() {
       localStorage.setItem("authToken", token);
       localStorage.setItem("user", JSON.stringify(result.user));
 
-      navigate("/category");
+      navigate("/categories");
     } catch (error) {
       console.error("Login failed:", error);
       alert("Google login failed. Please try again.");

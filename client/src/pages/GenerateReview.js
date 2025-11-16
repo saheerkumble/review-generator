@@ -1,3 +1,4 @@
+/*
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -59,17 +60,17 @@ function GenerateReview() {
     <div style={{ maxWidth: "700px", margin: "50px auto", padding: "20px" }}>
       <h2>AI Generated Review</h2>
 
-      {/* Loading Spinner */}
-      {loading && <p>Generating your personalized review… Please wait.</p>}
+      
+      {loading && <p>Generating your personalized review… Please wait.</p>} //loading spinner
 
-      {/* Show Review */}
+      //show review
       {!loading && (
         <div style={{ marginTop: "20px", lineHeight: "1.6" }}>
           <p>{review}</p>
         </div>
       )}
 
-      {/* Restart Button */}
+     //restart button
       {!loading && (
         <button
           onClick={handleRestart}
@@ -91,3 +92,34 @@ function GenerateReview() {
 }
 
 export default GenerateReview;
+*/
+
+import { useLocation, useNavigate } from "react-router-dom";
+import ReviewGenerator from "../components/ReviewGenerator";
+
+function GenerateReviewPage() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { category, selectedKeywords } = location.state || {};
+
+  const handleRestart = () => {
+    navigate("/categories");
+  };
+
+  // Redirect if no category or keywords
+  if (!category || !selectedKeywords) {
+    navigate("/categories");
+    return null; // render nothing while redirecting
+  }
+
+  return (
+    <ReviewGenerator
+      category={category}
+      selectedKeywords={selectedKeywords}
+      onRestart={handleRestart}
+    />
+  );
+}
+
+export default GenerateReviewPage;
