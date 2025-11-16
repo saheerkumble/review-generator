@@ -13,6 +13,7 @@ export default ReviewCard;
 
 //Review in same tab
 import React from "react";
+import TestAI from "../components/TestAI"
 
 function ReviewCard({ keyword, review, onRestart }) {
   const handleApprove = async () => {
@@ -30,7 +31,7 @@ function ReviewCard({ keyword, review, onRestart }) {
       // Redirect
       window.location.href = googleReviewUrl;
     } catch (err) {
-      console.error("Failed to copy review text:", err);
+      //console.error("Failed to copy review text:", err);
       alert("Could not copy review to clipboard. Please copy manually.");
     }
   };
@@ -50,6 +51,9 @@ function ReviewCard({ keyword, review, onRestart }) {
       <div style={{ marginTop: "25px", display: "flex", justifyContent: "center", gap: "15px" }}>
         <button onClick={onRestart}>Start Over</button>
         <button onClick={handleApprove}>Approve</button>
+      </div>
+      <div style={{ marginTop: "30px" }}>
+        <TestAI />
       </div>
     </div>
   );

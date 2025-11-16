@@ -127,7 +127,8 @@ import Home from "./pages/Home";
 import CategorySelect from "./pages/CategorySelect";
 import KeywordSelect from "./pages/KeywordSelect";
 import ReviewDisplay from "./pages/ReviewDisplay";
-
+import CategoriesSelect from "./pages/CategoriesSelect";
+import GenerateReview from "./pages/GenerateReview";
 
 function App() {
   return (
@@ -138,7 +139,8 @@ function App() {
           <Route path="/category" element={<CategorySelect />} />
           <Route path="/keywords/:category" element={<KeywordSelect />} />
           <Route path="/review/:category/:keyword" element={<ReviewDisplay />} />
-        
+          <Route path="/categories" element={<CategoriesSelect/>}/>
+          <Route path="/generate-review" element={<GenerateReview/>}/>
         </Routes>
       </Router>
     </ReviewProvider>
