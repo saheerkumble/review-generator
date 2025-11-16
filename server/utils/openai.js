@@ -48,13 +48,20 @@ const client = new OpenAI({
 // selectedKeywords = array of 5 keywords
 export async function generateAIReview(category, selectedKeywords) {
   const keywordList = selectedKeywords.join(", ");
-
+/*
   const prompt = `
 Generate a friendly and positive 5–6 sentence upto 50 words customer review for a Royal Enfield dealership experience.
 The experience category is: ${category.toUpperCase()}.
 Incorporate the synonyms of the following ALL 5 keywords naturally and meaningfully into the review: ${keywordList}.
 Keep the review simple, conversational, and genuine. Do not list keywords. Write as a real customer.
   `;
+*/
+
+//cost saving prompt
+  const prompt = `
+    Write a 5–6 sentence (≤50 words) friendly, positive customer review for a Royal Enfield dealership in the experience category: ${category.toUpperCase()}. Include synonyms of these keywords naturally: ${keywordList}. Keep it simple, genuine, and as if written by a real customer.
+    `;
+
 
   const response = await client.chat.completions.create({
     model: "gpt-5.1",
